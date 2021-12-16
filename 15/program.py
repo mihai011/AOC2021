@@ -31,7 +31,7 @@ def part1_and_2(part_2):
     for _ in range(4):
       rows.append(increment_map(rows[-1]))
     data = np.concatenate(rows)
-    
+
   g = DiGraph()
   max_y_pos = len(data)-1
   max_x_pos = len(data[0])-1
@@ -47,14 +47,15 @@ def part1_and_2(part_2):
   result = 0
   for i in range(len(shortest)-1):
       result += g[shortest[i]][shortest[i+1]]["weight"]
-  print(result)
-
-  return g
+  return result
 
   
 
 
 if __name__ == "__main__":
 
-  res1 = part1_and_2(True)
+  res1 = part1_and_2(False)
   print(res1)
+
+  res2 = part1_and_2(True)
+  print(res2)
